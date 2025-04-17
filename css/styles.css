@@ -1,0 +1,805 @@
+/* General Styles */
+:root {
+    --primary-color: #003366;
+    --text-color: #333;
+    --border-color: #ccc;
+    --page-width: 8.5in;
+    --page-height: 11in;
+    --page-margin: 0.75in;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+    color: var(--text-color);
+    background-color: #f0f0f0;
+    padding: 2rem;
+    margin: 0;
+}
+
+/* Page Layout */
+.page {
+    width: var(--page-width);
+    min-height: var(--page-height);
+    margin: 0 auto 2rem;
+    background: white;
+    padding: var(--page-margin);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Hide header on subsequent pages */
+.page.subsequent-page .report-header {
+    display: none;
+}
+
+/* Adjust spacing for subsequent pages */
+.page.subsequent-page .report-content {
+    margin-top: 0;
+}
+
+/* Header Styles */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.75rem;
+}
+
+.logo-section {
+    display: flex;
+    gap: 1rem;
+}
+
+.wcb-logo {
+    height: 75px;
+    width: auto;
+}
+
+.contact-info {
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.report-title {
+    text-align: right;
+}
+
+.report-title h1 {
+    margin: 0 0 0.75rem 0;
+    color: var(--primary-color);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.claim-info {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.claim-number {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.claim-number label {
+    font-size: 0.9rem;
+}
+
+.claim-number input {
+    border: 1px solid var(--border-color);
+    padding: 0.15rem 0.25rem;
+    width: 100px;
+}
+
+.wp-label {
+    border: 1px solid var(--border-color);
+    padding: 0.15rem 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Worker Info */
+.worker-info {
+    margin-bottom: 1.5rem;
+}
+
+.worker-name {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Form Sections */
+section {
+    margin-bottom: 1.25rem;
+}
+
+.return-to-work h2 {
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.options-group {
+    margin-top: 0.25rem;
+}
+
+/* Return to Work Section */
+.return-to-work .options-group {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.return-to-work .checkbox-option {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.return-to-work .checkbox-option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0;
+    position: relative;
+    background: white;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.return-to-work .checkbox-option input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.return-to-work .checkbox-option input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.return-to-work .checkbox-option label {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.return-to-work .checkbox-option input[type="date"] {
+    margin-left: 0.5rem;
+    padding: 0.15rem 0.25rem;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Working Status Section */
+.working-status {
+    margin-top: 1.5rem;
+}
+
+.working-status>p {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.working-status .options-group {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.working-status .checkbox-option {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.working-status .checkbox-option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0;
+    position: relative;
+    background: white;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.working-status .checkbox-option input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.working-status .checkbox-option input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.working-status .checkbox-option label {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.working-status .checkbox-option.other {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.working-status .checkbox-option.other input[type="text"] {
+    margin-left: 0.5rem;
+    flex: 1;
+    padding: 0.15rem 0.25rem;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Other Sections */
+section:not(.return-to-work):not(.working-status) .checkbox-option {
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+section:not(.return-to-work):not(.working-status) .checkbox-option input[type="checkbox"] {
+    margin: 0.2rem 0 0 0;
+    width: 13px;
+    height: 13px;
+}
+
+/* Progress Section */
+.progress-section h3,
+.concerns h3,
+.future-return h3 {
+    font-size: 0.95rem;
+    font-weight: normal;
+    margin: 0 0 0.25rem 0;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem;
+    resize: none;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+    max-height: 120px;
+    margin-bottom: 2rem;
+}
+
+/* Contact Details */
+.contact-details p {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+/* Recovery Section */
+.pain-scale h3 {
+    font-size: 0.95rem;
+    font-weight: normal;
+    margin: 0 0 0.5rem 0;
+}
+
+.pain-scale p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.pain-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.pain-option {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.pain-option input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.pain-option label {
+    font-size: 0.95rem;
+}
+
+/* Medical Treatment Section */
+.bordered-group {
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.select-one {
+    margin: 0;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.options-group {
+    padding: 0.75rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-option:last-child {
+    margin-bottom: 0;
+}
+
+.checkbox-option input[type="checkbox"] {
+    width: 13px;
+    height: 13px;
+    margin-top: 0.2rem;
+}
+
+.checkbox-option label {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.checkbox-option.with-input {
+    flex-wrap: wrap;
+}
+
+.provider-input,
+.medication-input {
+    width: 100%;
+    margin-left: 1.5rem;
+    margin-top: 0.25rem;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Treatment Details */
+.treatment-date {
+    margin-bottom: 1rem;
+}
+
+.treatment-date:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.treatment-date p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.date-input {
+    width: 130px;
+}
+
+/* Chiropractor Section */
+.chiropractor {
+    margin-bottom: 1.5rem;
+}
+
+.chiropractor p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.frequency-input {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Exercise List */
+.exercise-list {
+    margin-top: 1rem;
+}
+
+.exercise-list p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+/* Additional Info */
+.info-box h3 {
+    font-size: 0.95rem;
+    font-weight: normal;
+    margin: 0 0 0.25rem 0;
+}
+
+/* Certification */
+.certification-box {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+}
+
+.certification-box .checkbox-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.certification-box input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0.2rem 0 0 0;
+    position: relative;
+    background: white;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.certification-box input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.certification-box input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.certification-box label {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.privacy-notice label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.privacy-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.page-footer {
+    position: absolute;
+    bottom: var(--page-margin);
+    left: var(--page-margin);
+    right: var(--page-margin);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+}
+
+.submission-info,
+.page-info {
+    white-space: nowrap;
+}
+
+/* Form Controls */
+input[type="date"],
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.15rem 0.25rem;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: none;
+        padding: 0;
+    }
+
+    .page {
+        box-shadow: none;
+        margin: 0;
+        padding: var(--page-margin);
+        page-break-after: always;
+    }
+
+    .page:last-child {
+        page-break-after: avoid;
+    }
+}
+
+/* Recovery Section */
+.recovery .options-group {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.recovery .checkbox-option {
+    margin-bottom: 0;
+    flex: 1 1 auto;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+.recovery .checkbox-option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0;
+    position: relative;
+    background: white;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.recovery .checkbox-option input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.recovery .checkbox-option input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.recovery .checkbox-option label {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Recovery Status Section */
+.recovery-status {
+    margin-top: 1.5rem;
+}
+
+.recovery-status h2 {
+    color: var(--primary-color);
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.recovery-status .select-one {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.recovery-status .options-group {
+    border: 1px solid var(--border-color);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.recovery-status .checkbox-option {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.recovery-status .checkbox-option input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0;
+    position: relative;
+    background: white;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.recovery-status .checkbox-option input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.recovery-status .checkbox-option input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.recovery-status .checkbox-option label {
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.recovery-status .recovery-comments p {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.recovery-status .recovery-comments textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem;
+    resize: none;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+    max-height: 120px;
+    margin-bottom: 2rem;
+}
+
+/* Additional Info Section */
+.additional-info {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.info-box p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.info-box textarea {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 0.25rem;
+    resize: none;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    min-height: 60px;
+    max-height: 120px;
+    margin-bottom: 2rem;
+}
+
+/* Common Checkbox Styles */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    margin: 0;
+    position: relative;
+    background: white;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Progress Report</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Page 1 -->
+    <div class="page" id="page1">
+        <header class="report-header">
+            <div class="logo-section">
+                <img src="images/wcb-logo.png" alt="WCB Logo" class="wcb-logo">
+                <div class="contact-info">
+                    <p>333 Broadway</p>
+                    <p>Winnipeg, MB R3C 4W3</p>
+                    <p>Phone: (204) 954-4321</p>
+                    <p>Toll Free: 1-855-954-4321</p>
+                    <p>wcb.mb.ca</p>
+                </div>
+            </div>
+            <div class="report-title">
+                <h1>Worker Progress Report</h1>
+                <div class="claim-info">
+                    <div class="claim-number">
+                        <label>Claim No.</label>
+                        <input type="text" id="claimNumber" readonly>
+                    </div>
+                    <div class="wp-label">
+                        <span>WP</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="report-content">
+            <section class="worker-info">
+                <p class="worker-name"><span id="workerName"></span> provided the following updates in relation to their
+                    claim:</p>
+            </section>
+
+            <section class="return-to-work">
+                <h2>Return to Work</h2>
+                <div class="options-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="noMissedTime">
+                        <label for="noMissedTime">I have not missed time from work</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notReturned">
+                        <label for="notReturned">I have not returned to work</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="returned">
+                        <label for="returned">I returned to work on:</label>
+                        <input type="date" id="returnDate">
+                    </div>
+                </div>
+            </section>
+
+            <section class="working-status">
+                <p>I am working:</p>
+                <div class="options-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="fullDutiesRegular">
+                        <label for="fullDutiesRegular">Full duties, regular hours</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="fullDutiesReduced">
+                        <label for="fullDutiesReduced">Full duties, reduced hours</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="modifiedDutiesRegular">
+                        <label for="modifiedDutiesRegular">Modified duties, regular hours</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="modifiedDutiesReduced">
+                        <label for="modifiedDutiesReduced">Modified duties, reduced hours</label>
+                    </div>
+                    <div class="checkbox-option other">
+                        <input type="checkbox" id="other">
+                        <label for="other">Other:</label>
+                        <input type="text" id="otherText" class="other-text">
+                    </div>
+                </div>
+            </section>
+
+            <section class="progress-section">
+                <h3>My return to work is going:</h3>
+                <textarea id="returnProgress" rows="3"></textarea>
+            </section>
+
+            <section class="future-return">
+                <h3>I expect to return to work on:</h3>
+                <input type="date" id="expectedReturnDate">
+            </section>
+
+            <section class="concerns">
+                <h3>I have the following concerns about returning to work:</h3>
+                <textarea id="concerns" rows="4"></textarea>
+            </section>
+
+            <section class="contact-details">
+                <p>I was most recently in contact with:
+                    <input type="text" id="employerContact" placeholder="Name of employer contact">
+                    on
+                    <input type="date" id="contactDate">
+                </p>
+            </section>
+
+            <section class="recovery-status">
+                <h2>Recovery</h2>
+                <p class="select-one">Select one:</p>
+                <div class="options-group">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="notFullyRecovered1">
+                        <label for="notFullyRecovered1">I have not fully recovered from my workplace injury.</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="fullyRecovered1">
+                        <label for="fullyRecovered1">I have fully recovered from my workplace injury.</label>
+                    </div>
+                </div>
+                <div class="recovery-comments">
+                    <p>I have provided the following comments about my recovery:</p>
+                    <textarea id="recoveryComments" rows="4"></textarea>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span>Worker App ID:</span>
+                    <span id="workerId">712041</span>
+                </div>
+                <div class="footer-right">
+                    <div class="submission-info">Submitted: March 19, 2024 19:21</div>
+                    <div class="page-info">Page 1 of 3</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Page 2 - Recovery -->
+    <div class="page subsequent-page" id="page2">
+        <header class="report-header">
+            <div class="logo-section">
+                <img src="images/wcb-logo.png" alt="WCB Logo" class="wcb-logo">
+                <div class="contact-info">
+                    <p>333 Broadway</p>
+                    <p>Winnipeg, MB R3C 4W3</p>
+                    <p>Phone: (204) 954-4321</p>
+                    <p>Toll Free: 1-855-954-4321</p>
+                    <p>wcb.mb.ca</p>
+                </div>
+            </div>
+            <div class="report-title">
+                <h1>Worker Progress Report</h1>
+                <div class="claim-info">
+                    <div class="claim-number">
+                        <label>Claim No.</label>
+                        <input type="text" id="claimNumber2" readonly>
+                    </div>
+                    <div class="wp-label">
+                        <span>WP</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="report-content">
+            <section class="pain-scale">
+                <p>I rate my current pain/discomfort on a scale of 1-10, where 1 is no pain and 10 is severe pain out of
+                    10.</p>
+                <div class="pain-options">
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain1" value="1">
+                        <label for="pain1">1</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain2" value="2">
+                        <label for="pain2">2</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain3" value="3">
+                        <label for="pain3">3</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain4" value="4">
+                        <label for="pain4">4</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain5" value="5">
+                        <label for="pain5">5</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain6" value="6">
+                        <label for="pain6">6</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain7" value="7">
+                        <label for="pain7">7</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain8" value="8">
+                        <label for="pain8">8</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain9" value="9">
+                        <label for="pain9">9</label>
+                    </div>
+                    <div class="pain-option">
+                        <input type="radio" name="painLevel" id="pain10" value="10">
+                        <label for="pain10">10</label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="medical-treatment">
+                <div class="bordered-group">
+                    <p class="select-one">Select one:</p>
+                    <div class="options-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="notReceivingTreatment">
+                            <label for="notReceivingTreatment">I am not continuing to receive medical treatment for my
+                                workplace injury.</label>
+                        </div>
+                        <div class="checkbox-option with-input">
+                            <input type="checkbox" id="receivingTreatment">
+                            <label for="receivingTreatment">I am continuing to receive medical treatment for my
+                                workplace injury from:</label>
+                            <input type="text" id="medicalProviderType" class="provider-input"
+                                placeholder="Medical Provider Type">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="treatment-details">
+                <div class="treatment-date">
+                    <p>My last medical treatment was
+                        <input type="date" id="lastTreatmentDate" class="date-input">
+                        from
+                        <input type="text" id="lastTreatmentProvider" class="provider-input"
+                            placeholder="Medical Provider Name">
+                    </p>
+                </div>
+                <div class="treatment-date">
+                    <p>My next medical treatment is
+                        <input type="date" id="nextTreatmentDate" class="date-input">
+                        from
+                        <input type="text" id="nextTreatmentProvider" class="provider-input"
+                            placeholder="Medical Provider Name">
+                    </p>
+                </div>
+            </section>
+
+            <section class="chiropractor">
+                <p>I am attending a Chiropractor or Physiotherapist
+                    <input type="text" id="chiropractorFrequency" class="frequency-input" placeholder="Frequency">
+                </p>
+            </section>
+
+            <section class="medication">
+                <div class="bordered-group">
+                    <p class="select-one">Select one:</p>
+                    <div class="options-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="notTakingMedication">
+                            <label for="notTakingMedication">I am not taking medication for my workplace injury.</label>
+                        </div>
+                        <div class="checkbox-option with-input">
+                            <input type="checkbox" id="takingMedication">
+                            <label for="takingMedication">I am taking medication for my workplace injury:</label>
+                            <input type="text" id="medicationName" class="medication-input"
+                                placeholder="Name of prescribed medication">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exercises">
+                <div class="bordered-group">
+                    <p class="select-one">Select one:</p>
+                    <div class="options-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="notDoingExercises">
+                            <label for="notDoingExercises">I am not doing home exercises for my workplace
+                                injury.</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="doingExercises">
+                            <label for="doingExercises">I am doing home exercises for my workplace injury.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="exercise-list">
+                    <p>List the exercises you are doing:</p>
+                    <textarea id="exercisesList" rows="4"></textarea>
+                </div>
+            </section>
+
+            <section class="additional-info">
+                <div class="info-box">
+                    <p>I would like to provide the following additional information about my claim/injury:</p>
+                    <textarea id="additionalInfo" rows="4"></textarea>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span>Worker App ID:</span>
+                    <span id="workerId2">712041</span>
+                </div>
+                <div class="footer-right">
+                    <div class="submission-info">Submitted: March 19, 2024 19:21</div>
+                    <div class="page-info">Page 2 of 3</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Page 3 - Certification -->
+    <div class="page subsequent-page" id="page3">
+        <header class="report-header">
+            <div class="logo-section">
+                <img src="images/wcb-logo.png" alt="WCB Logo" class="wcb-logo">
+                <div class="contact-info">
+                    <p>333 Broadway</p>
+                    <p>Winnipeg, MB R3C 4W3</p>
+                    <p>Phone: (204) 954-4321</p>
+                    <p>Toll Free: 1-855-954-4321</p>
+                    <p>wcb.mb.ca</p>
+                </div>
+            </div>
+            <div class="report-title">
+                <h1>Worker Progress Report</h1>
+                <div class="claim-info">
+                    <div class="claim-number">
+                        <label>Claim No.</label>
+                        <input type="text" id="claimNumber3" readonly>
+                    </div>
+                    <div class="wp-label">
+                        <span>WP</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="report-content">
+            <section class="certification">
+                <div class="certification-box">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="certifyInformation" required>
+                        <label for="certifyInformation">I certify that the information given on this form is true,
+                            correct and complete to the best of my knowledge. I agree to notify the Workers Compensation
+                            Board of Manitoba (WCB) immediately once I return to any form of work and/or employment. I
+                            understand that it is an offence to knowingly make a false statement to the WCB. I also
+                            understand that it is an offence to withhold information from WCB which affects my
+                            entitlement to compensation (e.g., full or partial recovery from injury, ability to return
+                            to work, sources of additional income, etc.). I understand that refusing to co-operate with,
+                            or follow my treatment, may result in the WCB reducing or suspending my benefits.</label>
+                    </div>
+                </div>
+                <div class="privacy-notice">
+                    <div class="checkbox-option">
+                        <input type="checkbox" id="privacyNotice" required>
+                        <label for="privacyNotice">I understand that the <a href="#" class="privacy-link">Privacy
+                                Notice</a> applies to the personal information collected in this document.</label>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <span>Worker App ID:</span>
+                    <span id="workerId3">712041</span>
+                </div>
+                <div class="footer-right">
+                    <div class="submission-info">Submitted: March 19, 2024 19:21</div>
+                    <div class="page-info">Page 3 of 3</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
