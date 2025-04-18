@@ -1,3 +1,6 @@
+## Watch the Video :
+[Click here to watch the demo](https://drive.google.com/file/d/1Rg-gFDrEGtMwfdUJAHFhYDfJ9Twwd8wN/view?usp=sharing)
+
 # Worker Progress Report Generator
 
 This web application generates Worker Progress Reports similar to the Workers Compensation Board (WCB) forms. The application is built using HTML, CSS, and JavaScript, demonstrating dynamic form generation and data handling.
