@@ -11,7 +11,6 @@ This web application generates Worker Progress Reports similar to the Workers Co
 - Dynamic data population
 - Page numbering
 - Form validation
-- PDF-like layout
 
 ## Project Structure
 
