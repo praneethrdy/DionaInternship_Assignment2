@@ -38,8 +38,6 @@ worker-progress-report/
 
 1. Fill in the form fields
 2. Data is dynamically validated and formatted
-3. Multiple pages are generated based on content
-4. Form can be printed or saved as PDF
 
 ## Development
 
